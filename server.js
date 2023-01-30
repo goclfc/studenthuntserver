@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require("cors");
 const bodyParser = require('body-parser')
-const { UserSchema} = require('./models/user')
+const { User} = require('./models/user')
 require('dotenv').config
 const app = express()
 app.use(
@@ -24,16 +24,17 @@ app.listen(port,()=>{
 })
 
 app.post('/register', (req, res) => {
-    // const request = req.body;
-    // const schema = new UserSchema;
-    // schema.email=request.anonim,
-    // schema.password=request.password,
-    // schema.role=request.role,
-    // schema.firstname=request.firstname,
-    // schema.lastname=request.lastname,
-    // schema.cart=request.cart,
-    // schema.history=request.history,
-    // schema.varified=request.varified,
-    // schema.save();
+    const request = req.body;
+    const schema = new User;
+    console.log(request,'request')
+    schema.email=request.email,
+    schema.password=request.password,
+    schema.role=request.role,
+    schema.firstname=request.firstname,
+    schema.lastname=request.lastname,
+    schema.cart=request.cart,
+    schema.history=request.history,
+    schema.varified=request.varified,
+    schema.save();
     res.send('Ok');
 });

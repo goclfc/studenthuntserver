@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const validator = require('validator');
+// const validator = require('validator');
 require('dotenv').config();
 
 
@@ -9,11 +9,11 @@ const userSchema = mongoose.Schema({
         required:true,
         unique: true,
         trim:true,
-        validate(value){
-            if(!validator.isEmail(value)){
-                throw new Error('Invalid email')
-            }
-        }
+        // validate(value){
+        //     if(!validator.isEmail(value)){
+        //         throw new Error('Invalid email')
+        //     }
+        // }
     },
     password:{
         type:String,
